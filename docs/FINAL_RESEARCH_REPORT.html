@@ -1,0 +1,120 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ECON 499 Audit Report</title><style>body{max-width:980px;margin:40px auto;padding:0 20px;font:16px/1.6 system-ui;color:#243042}h1,h2{color:#122640}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:8px;text-align:left}img{max-width:100%}</style></head><body><h1>ECON 499 — Atlanta Mall Accessibility and Observed Activity</h1>
+<p><strong>Final reproducibility and geographic-vintage audit (22 November 2026)</strong></p>
+<h2>Executive summary</h2>
+<p>This study compares <strong>Lenox Square, Phipps Plaza, and Ponce City Market</strong> using 2024 Advan Neighborhood Patterns Plus-derived activity, 2024 ACS five-year ZCTA socioeconomic variables, and manually collected Google Maps driving distances. The current empirical results are <strong>provisional</strong> because the Advan product citation says <em>2010 CBG Vintage</em>, while the legacy geographic overlay uses 2024 Georgia block-group and 2026 ZCTA geometry. A 2010 NHGIS block-to-2020-ZCTA crosswalk was available locally and was used to create a <strong>diagnostic, equal-block approximation</strong>, not a validated replacement.</p>
+<p><strong>Central finding:</strong> The legacy gravity specification estimates a negative distance coefficient of <strong>-1.027</strong> (cluster SE 0.083), while the 2010-based diagnostic gives <strong>-0.445</strong> (SE 0.181). The sign is stable, but magnitude and origin coverage are sensitive to geography. Do not report a single coefficient as geographically validated.</p>
+<h2>Research questions</h2>
+<ol>
+<li>How is driving distance associated with observed origin-to-destination activity around three Atlanta shopping destinations?</li>
+<li>Are ZIP-level income and socioeconomic characteristics associated with the observed activity after controlling for distance and population?</li>
+<li>Can a calibrated Huff-style choice model predict relative activity shares, and how does it compare with a simple historical-share baseline?</li>
+</ol>
+<h2>Data and interpretation</h2>
+<ul>
+<li><strong>Activity:</strong> 2024 Advan Neighborhood Patterns Plus derived CBG origin counts to three <em>destination CBGs</em>, not verified mall entrance counts or mall-specific visits. Each destination CBG may contain non-mall activity.</li>
+<li><strong>Geography:</strong> The provider citation indicates 2010 CBG vintage; the legacy overlay used 2024 CBG and 2026 ZCTA geometry. The diagnostic uses NHGIS 2010 census blocks to 2020 ZCTAs.</li>
+<li><strong>Covariates:</strong> ACS 2024 five-year ZCTA income, Gini and selected controls; 24 study ZCTAs, with one excluded from complete-case income regressions (23 clusters). Distance is user-collected Google Maps driving miles, not a randomized treatment.</li>
+<li><strong>Interpretation:</strong> Associations and hypothetical share simulations only; no causal effect of a mall's construction, renovation or distance reduction is identified.</li>
+</ul>
+<h2>Geographic coverage audit</h2>
+<table>
+<thead>
+<tr>
+  <th>Metric</th>
+  <th style="text-align:right">Legacy crosswalk</th>
+  <th style="text-align:right">2010 NHGIS diagnostic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Distinct origin CBG IDs in entire flow export</td>
+  <td style="text-align:right">11,786</td>
+  <td style="text-align:right">11,786</td>
+</tr>
+<tr>
+  <td>Origin IDs matched to selected 24 ZCTAs</td>
+  <td style="text-align:right">575</td>
+  <td style="text-align:right">242</td>
+</tr>
+<tr>
+  <td>Origin device counts allocated to study ZCTAs</td>
+  <td style="text-align:right">27.05%</td>
+  <td style="text-align:right">8.75%</td>
+</tr>
+<tr>
+  <td>Model panel rows</td>
+  <td style="text-align:right">864</td>
+  <td style="text-align:right">864</td>
+</tr>
+<tr>
+  <td>Panel rows with positive allocated activity</td>
+  <td style="text-align:right">864</td>
+  <td style="text-align:right">827</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important:</strong> The denominator includes all origins in the provider's export, including origins outside Georgia and outside the selected Atlanta ZCTAs. Thus these fractions are <strong>study-area capture</strong>, not an error rate. The change between scenarios is still large and demonstrates that the vintage question matters. The diagnostic assumes equal weight per 2010 census block when aggregating the NHGIS block-level interpolation to a CBG. This assumption is not supported as a population-accurate CBG allocation without 2010 block population counts, so these estimates must not replace the legacy coefficients as definitive results.</p>
+<h2>Gravity and sorting models</h2>
+<p>Baseline PPML specification: <code>flow ~ log(1 + driving_miles) + log(income) + log(population) + destination fixed effects + month fixed effects</code>. Standard errors clustered by origin ZCTA.</p>
+<table>
+<thead>
+<tr>
+  <th>Estimate</th>
+  <th style="text-align:right">Legacy</th>
+  <th style="text-align:right">2010 diagnostic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Distance, baseline</td>
+  <td style="text-align:right">-1.027</td>
+  <td style="text-align:right">-0.445</td>
+</tr>
+<tr>
+  <td>Cluster SE for distance</td>
+  <td style="text-align:right">0.083</td>
+  <td style="text-align:right">0.181</td>
+</tr>
+<tr>
+  <td>Income, baseline</td>
+  <td style="text-align:right">0.258</td>
+  <td style="text-align:right">0.141</td>
+</tr>
+<tr>
+  <td>Income, full controls</td>
+  <td style="text-align:right">0.091</td>
+  <td style="text-align:right">0.216</td>
+</tr>
+</tbody>
+</table>
+<p>The negative distance association survives both geographic scenarios, but the numerical size is not stable. The legacy income estimate is modest and borderline under conventional inference; it is not statistically robust to the full set of controls. The full-controls coefficients in the diagnostic are especially sensitive to changed spatial allocations and should not be interpreted substantively. The sorting specification includes origin fixed effects and an income × Buckhead-mall indicator; its interaction estimate is not robustly distinguishable from zero.</p>
+<p><img src="distance_sensitivity.png" alt="Distance sensitivity" /></p>
+<h2>Robustness checks</h2>
+<p>Re-estimated baseline gravity models using January–October, November–December, and leave-one-origin-ZCTA-out samples. Legacy leave-one-origin distance coefficients range from <strong>-1.083 to -0.982</strong>; the 2010 diagnostic ranges from <strong>-0.646 to -0.334</strong>. Within-scenario sample stability does not resolve between-scenario geographic uncertainty. Full tables are in <code>model_comparison.csv</code>.</p>
+<h2>Huff-style destination shares</h2>
+<p>Using January–September for calibration and October–December for holdout, the <strong>legacy distance + income</strong> model achieves <strong>6.03 percentage points MAE</strong>, compared with <strong>3.26 pp</strong> for a simple historical average of each origin's destination shares. Thus the calibrated Huff model <strong>does not beat</strong> the historical baseline on this holdout. This is a key limitation, not a success claim.</p>
+<p>The legacy counterfactual mechanically reduces driving distance to one mall by 20%, holding other variables fixed. Its own predicted share increases by approximately <strong>3.65–4.28 percentage points</strong>, depending on the mall. These are model-implied scenarios, not causal effects or real-world policy forecasts. See <code>huff_counterfactual_legacy.csv</code>.</p>
+<p><img src="huff_holdout.png" alt="Holdout comparison" /></p>
+<h2>Limitations and next requirements</h2>
+<ol>
+<li><strong>Confirm provider origin CBG vintage from exact purchased partition metadata</strong>, rather than assuming the citation alone describes all files. This cannot be independently resolved from the local derived export.</li>
+<li>If confirmed 2010, <strong>aggregate the 2010 block-to-ZCTA NHGIS crosswalk with 2010 block population weights</strong> or use an authoritative 2010 CBG → 2020 ZCTA population-weighted correspondence. The equal-block proxy is not a substitute.</li>
+<li>Check whether ACS 2024 ZCTA codes and definitions are sufficiently compatible with 2020 ZCTAs; document differences. The legacy use of 2026 ZCTA polygons requires similar scrutiny.</li>
+<li>The source destination geography is a <strong>CBG containing a mall</strong>, not a mall POI; avoid labeling these as verified mall visits.</li>
+<li>Device-based activity is subject to sampling and vendor methodology; do not treat counts as a census of shoppers.</li>
+<li>Study-area selection (24 ZCTAs) excludes origins outside the region; unallocated fractions are not automatically crosswalk errors.</li>
+<li>Income and demographic attributes are measured at origin ZCTA level, not for individual mall visitors; avoid ecological fallacy.</li>
+<li>Three destinations and one calendar year cannot identify before/after construction impacts.</li>
+</ol>
+<h2>Reproducibility and deliverables</h2>
+<ul>
+<li><code>run_audit.py</code>: replays the complete legacy and 2010 diagnostic pipelines using <strong>locally held restricted source files</strong> (not included in the shareable package).</li>
+<li><code>origin_coverage_comparison.csv</code>: capture rates and counts.</li>
+<li><code>model_comparison.csv</code>: PPML estimates and sensitivity checks.</li>
+<li><code>huff_validation_*.csv</code>, <code>huff_counterfactual_*.csv</code>: share-model validation and scenarios.</li>
+<li><code>panel_*.csv</code>: <strong>restricted derivative data</strong>, excluded from the public results ZIP.</li>
+<li><code>2010_block_equal_weight_DIAGNOSTIC_NOT_VALIDATED.csv</code>: <strong>restricted diagnostic derivative</strong>, excluded from the public results ZIP.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The study supports a descriptive finding that greater driving distance is associated with lower observed activity flows to the three mall-containing destination CBGs. The exact elasticity and the interpretation of socioeconomic differences remain uncertain until the geography vintage is reconciled. The calibrated choice model is informative as a simulation, but does not outperform a simple historical-share prediction benchmark. The analysis should be presented as <strong>observational and provisional</strong>, not as a causal or fully geographically harmonized result.</p>
+</body></html>

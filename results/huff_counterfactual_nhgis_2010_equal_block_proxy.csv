@@ -1,0 +1,4 @@
+scenario,improved_mall,distance_reduction,Lenox Square,Phipps Plaza,Ponce City Market
+nhgis_2010_equal_block_proxy,Lenox Square,0.2,4.313296912591134,-1.9595941757665911,-2.353702736824547
+nhgis_2010_equal_block_proxy,Phipps Plaza,0.2,-2.003538404276801,3.728815843247249,-1.7252774389704426
+nhgis_2010_equal_block_proxy,Ponce City Market,0.2,-2.1419468620298057,-1.5389356183682363,3.6808824803980325

@@ -1,0 +1,3 @@
+scenario,model,converged,distance_coef,income_buckhead_coef,holdout_MAE_pp,historical_baseline_MAE_pp,holdout_n
+legacy,distance,True,-1.0611882379296937,,6.184970990942624,3.2574169379977627,69
+legacy,distance_income,True,-1.0075119926134237,0.3078218491197758,6.034029839694776,3.2574169379977627,69
