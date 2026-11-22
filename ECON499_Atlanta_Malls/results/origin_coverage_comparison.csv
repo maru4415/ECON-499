@@ -1,0 +1,3 @@
+scenario,origin_ids_all,origin_ids_matched,all_flow_device_count,flow_device_count_from_matched_origins,allocated_flow_total,allocation_fraction_all_origins,panel_rows,panel_positive_flow_rows
+legacy,11786,575,3802597,1069843,1028690.8632046985,0.2705232406181088,864,864
+nhgis_2010_equal_block_proxy,11786,242,3802597,346412,332538.5989370788,0.0874503921759468,864,827

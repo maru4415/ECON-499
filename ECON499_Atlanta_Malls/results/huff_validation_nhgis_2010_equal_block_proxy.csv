@@ -1,0 +1,3 @@
+scenario,model,converged,distance_coef,income_buckhead_coef,holdout_MAE_pp,historical_baseline_MAE_pp,holdout_n
+nhgis_2010_equal_block_proxy,distance,True,-1.0411601974703615,,7.91090619770804,5.055613747217286,66
+nhgis_2010_equal_block_proxy,distance_income,True,-0.9832758336602967,0.320601457846982,7.821690172446484,5.055613747217286,66
