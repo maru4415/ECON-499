@@ -1,0 +1,7 @@
+scenario,model,n_holdout_cells,MAE_share_pp,historical_baseline_MAE_pp
+2020_geometry_provisional,distance_only,288,6.326336445487285,3.0014937045209176
+2020_geometry_provisional,distance_income,288,6.220444224491558,3.0014937045209176
+2020_geometry_provisional,distance_race,288,5.933537209746834,3.0014937045209176
+2010_equal_block_diagnostic,distance_only,276,9.183920605833551,4.39348651989129
+2010_equal_block_diagnostic,distance_income,276,9.135054886741678,4.39348651989129
+2010_equal_block_diagnostic,distance_race,276,8.86525028570532,4.39348651989129

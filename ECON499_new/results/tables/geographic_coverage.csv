@@ -1,0 +1,3 @@
+scenario,origin_cbgs_matched,flow_fraction_allocated_to_25_zctas,panel_rows,unreported_panel_cells,n_income_zctas
+2020_geometry_provisional,691,0.2717788746428008,1200,0,24
+2010_equal_block_diagnostic,259,0.09064796502483634,1200,78,24

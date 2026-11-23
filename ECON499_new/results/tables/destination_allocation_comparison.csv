@@ -1,0 +1,9 @@
+scenario,mall,allocated_annual_monthly_sum,mean_monthly_flow,reported_cells,total_cells
+2020 overlay (provisional),Lenox Square,433341.47016185115,1444.4715672061704,300,300
+2020 overlay (provisional),Greenbriar Mall,143540.1099493795,478.4670331645983,300,300
+2020 overlay (provisional),Phipps Plaza,329509.4822011705,1098.3649406705683,300,300
+2020 overlay (provisional),Ponce City Market,298262.5486276968,994.208495425656,300,300
+2010 equal-block (diagnostic),Lenox Square,128159.55297715252,427.19850992384175,287,300
+2010 equal-block (diagnostic),Greenbriar Mall,63470.24600102344,211.56748667007815,260,300
+2010 equal-block (diagnostic),Phipps Plaza,96398.54886371475,321.3284962123825,287,300
+2010 equal-block (diagnostic),Ponce City Market,113766.67222750082,379.22224075833606,288,300

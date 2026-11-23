@@ -1,0 +1,7 @@
+scenario,sample,model,term,coefficient,std_error,p_value,observations,zctas,note
+2020 overlay (provisional),Full 25 ZCTAs,Origin+destination+month FE PPML,log(1+miles),-1.302359308774393,0.09323010083430813,2.399714502953438e-44,1200,25,Reported cells only is selected on observability; not a correction for truncation
+2020 overlay (provisional),Original 24 ZCTAs,Origin+destination+month FE PPML,log(1+miles),-1.273331303569377,0.12253624110600415,2.7115011719420754e-25,1152,24,Reported cells only is selected on observability; not a correction for truncation
+2020 overlay (provisional),Reported cells only,Origin+destination+month FE PPML,log(1+miles),-1.302359308774393,0.09323010083430813,2.399714502953438e-44,1200,25,Reported cells only is selected on observability; not a correction for truncation
+2010 equal-block (diagnostic),Full 25 ZCTAs,Origin+destination+month FE PPML,log(1+miles),-1.5468334180059722,0.09174500267656695,8.83822537553658e-64,1200,25,Reported cells only is selected on observability; not a correction for truncation
+2010 equal-block (diagnostic),Original 24 ZCTAs,Origin+destination+month FE PPML,log(1+miles),-1.5283911936859822,0.09948029961185346,2.8647850880451414e-53,1152,24,Reported cells only is selected on observability; not a correction for truncation
+2010 equal-block (diagnostic),Reported cells only,Origin+destination+month FE PPML,log(1+miles),-1.5054661634061335,0.09288170591622753,4.39693075629962e-59,1122,24,Reported cells only is selected on observability; not a correction for truncation

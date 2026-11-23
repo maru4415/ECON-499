@@ -1,0 +1,31 @@
+scenario,model,term,coefficient,se,p_value,n,zctas
+2020 polygon overlay (provisional),P1: Distance + origin and month FE,log_distance,-1.6737922601065196,0.0961989680341536,8.35543268204772e-68,600,25
+2020 polygon overlay (provisional),P1: Distance + origin and month FE,Lenox,0.7073031857279215,0.10568843022386937,2.1962590387730605e-11,600,25
+2020 polygon overlay (provisional),P2: Income differential + origin and month FE,log_distance,-1.3847407593140546,0.07687799318598894,1.5632933725016199e-72,576,24
+2020 polygon overlay (provisional),P2: Income differential + origin and month FE,Lenox,1.0469101479408678,0.12088626670491451,4.705648505965754e-18,576,24
+2020 polygon overlay (provisional),P2: Income differential + origin and month FE,Lenox:income_centered,1.0955027353376259,0.24582592829610453,8.334102127757233e-06,576,24
+2020 polygon overlay (provisional),P3: Gini differential + origin and month FE,log_distance,-1.6720058214653117,0.0737517838932992,8.716293026433056e-114,600,25
+2020 polygon overlay (provisional),P3: Gini differential + origin and month FE,Lenox,0.7272470788260229,0.09430071175723473,1.2386123779880963e-14,600,25
+2020 polygon overlay (provisional),P3: Gini differential + origin and month FE,Lenox:gini_centered,-3.8399561538058373,2.161358863564629,0.0756275248179686,600,25
+2020 polygon overlay (provisional),P4: Black-share differential + origin and month FE,log_distance,-0.8933571981548922,0.16004308801734296,2.3779673933488406e-08,600,25
+2020 polygon overlay (provisional),P4: Black-share differential + origin and month FE,Lenox,1.192175503718847,0.1241615803262299,7.855512985733283e-22,600,25
+2020 polygon overlay (provisional),P4: Black-share differential + origin and month FE,Lenox:black_centered,-2.941395906002408,0.5671735852441729,2.1479032114898402e-07,600,25
+2020 polygon overlay (provisional),P5: Income and Black-share differential,log_distance,-0.9726344448240903,0.2122532743134434,4.596173284839414e-06,576,24
+2020 polygon overlay (provisional),P5: Income and Black-share differential,Lenox,1.1923686856833315,0.13256463032677684,2.3704739903905698e-19,576,24
+2020 polygon overlay (provisional),P5: Income and Black-share differential,Lenox:income_centered,0.41085779848533055,0.44230064676205605,0.35293537306505496,576,24
+2020 polygon overlay (provisional),P5: Income and Black-share differential,Lenox:black_centered,-2.2222012226360173,1.0743943245958254,0.03860907176551616,576,24
+2010 equal-block diagnostic,P1: Distance + origin and month FE,log_distance,-1.96415429849575,0.11802086443496952,3.4337966269106243e-62,600,25
+2010 equal-block diagnostic,P1: Distance + origin and month FE,Lenox,0.5517536437159409,0.15687666096116254,0.0004362606774050358,600,25
+2010 equal-block diagnostic,P2: Income differential + origin and month FE,log_distance,-1.6898387257970295,0.08766249846528619,8.437725606433859e-83,576,24
+2010 equal-block diagnostic,P2: Income differential + origin and month FE,Lenox,0.8646929304284043,0.19596129191082715,1.0215072124894539e-05,576,24
+2010 equal-block diagnostic,P2: Income differential + origin and month FE,Lenox:income_centered,0.8229475079494062,0.16992335222718624,1.278602750145309e-06,576,24
+2010 equal-block diagnostic,P3: Gini differential + origin and month FE,log_distance,-1.9295819014209528,0.11870885992829694,2.067364686941597e-59,600,25
+2010 equal-block diagnostic,P3: Gini differential + origin and month FE,Lenox,0.5929929345190479,0.14643279179431506,5.130719608205936e-05,600,25
+2010 equal-block diagnostic,P3: Gini differential + origin and month FE,Lenox:gini_centered,-5.255798750017999,3.292356986578769,0.11040764490295231,600,25
+2010 equal-block diagnostic,P4: Black-share differential + origin and month FE,log_distance,-1.1129836914575058,0.20985225099033747,1.1350747683504148e-07,600,25
+2010 equal-block diagnostic,P4: Black-share differential + origin and month FE,Lenox,1.0536232767299334,0.13566305474700863,8.070259432670647e-15,600,25
+2010 equal-block diagnostic,P4: Black-share differential + origin and month FE,Lenox:black_centered,-2.965031247243816,0.6011820946581122,8.139111513980393e-07,600,25
+2010 equal-block diagnostic,P5: Income and Black-share differential,log_distance,-0.8649570550716117,0.4246353234271047,0.04165596550254212,576,24
+2010 equal-block diagnostic,P5: Income and Black-share differential,Lenox,1.0780879921556479,0.1171823769354733,3.5766206905977553e-20,576,24
+2010 equal-block diagnostic,P5: Income and Black-share differential,Lenox:income_centered,-0.7255579533899312,0.8570191531195722,0.39721451069416824,576,24
+2010 equal-block diagnostic,P5: Income and Black-share differential,Lenox:black_centered,-4.707173470974086,2.290406637680373,0.039862652531142614,576,24
